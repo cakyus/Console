@@ -1,0 +1,14 @@
+{
+    "name": "cakyus/php-cmd",
+    "description": "PHP Command Line Interface",
+    "license": "GPLv3",
+    "authors": [
+        {
+            "name": "cakyus",
+            "email": "cakyus@gmail.com"
+        }
+    ],
+    "require": {
+
+    }
+}
