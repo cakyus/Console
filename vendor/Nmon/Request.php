@@ -31,7 +31,8 @@ class Request {
 	 **/
 
 	public function getControllerName() {
-		// code...
+		$controllerName = '\\Controller\\Index';
+		return $controllerName;
 	}
 
 	/**
@@ -40,7 +41,8 @@ class Request {
 	 **/
 
 	public function getFunctionName() {
-		// code...
+		$functionName = 'index';
+		return $functionName;
 	}
 
 	/**
@@ -49,7 +51,8 @@ class Request {
 	 **/
 
 	public function getArguments() {
-		// code...
+		$arguments = array();
+		return $arguments;
 	}
 
 	private function getData() {
