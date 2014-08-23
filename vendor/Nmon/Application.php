@@ -32,8 +32,10 @@ class Application {
 		$functionName = $request->getFunctionName();
 		$arguments = $request->getArguments();
 
+		$objectController = new $controllerName;
+
 		try {
-			call_user_func(array($controllerName, $functionName), $arguments);
+			call_user_func(array($objectController, $functionName), $arguments);
 		} catch (\Exception $e) {
 			throw $e;
 		}
