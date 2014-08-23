@@ -15,12 +15,12 @@
  * along with this program. If not, see <http://www.gnu.org/licenses/>.
  */
 
-date_default_timezone_set('Asia/Jakarta');
-
 define('APPLICATION_ROOT', __DIR__);
 define('APPLICATION_PATH', APPLICATION_ROOT.DIRECTORY_SEPARATOR.'app');
 define('APPLICATION_DATA', APPLICATION_ROOT.DIRECTORY_SEPARATOR.'data');
 define('APPLICATION_VENDOR', APPLICATION_ROOT.DIRECTORY_SEPARATOR.'vendor');
+
+include(__DIR__.DIRECTORY_SEPARATOR.'config.php');
 
 include(APPLICATION_VENDOR
 	.DIRECTORY_SEPARATOR.'Nmon'
@@ -29,3 +29,4 @@ include(APPLICATION_VENDOR
 
 $app = new \Nmon\Application;
 $app->start();
+
