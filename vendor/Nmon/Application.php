@@ -30,9 +30,14 @@ class Application {
 
 		$controllerName = $request->getControllerName();
 		$functionName = $request->getFunctionName();
+		$arguments = $request->getArguments();
 
-		$controller = new $controllerName;
-		$controller->$functionName();
+		try {
+			call_user_func(array($controllerName, $functionName), $arguments);
+		} catch (\Exception $e) {
+			throw $e;
+		}
+
 	}
 
     protected function setAutoloader() {
