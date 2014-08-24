@@ -57,6 +57,30 @@ class Controller  {
 			echo '  '.str_pad($outputCommand['name'], $columnNameLengthMax,' ');
 			echo '  '.$outputCommand['description']."\n";
 		}
+
+		// get options
+		$properties = $class->getProperties(\ReflectionProperty::IS_PUBLIC);
+		if (count($properties) == 0) {
+			return TRUE;
+		}
+
+		echo "Options:\n";
+		$outputProperties = array();
+		$columnNameLengthMax = 0;
+		foreach ($properties as $property) {
+			$outputProperties[] = array(
+				 'name' => $property->name
+				,'description' => $this->getCommentFirst($property->getDocComment())
+				);
+			if (strlen($property->name) > $columnNameLengthMax) {
+				$columnNameLengthMax = strlen($property->name);
+			}
+		}
+
+		foreach ($outputProperties as $property) {
+			echo '  -'.str_pad($property['name'], $columnNameLengthMax, ' ');
+			echo '  '.$property['description']."\n";
+		}
 	}
 
 	/**
