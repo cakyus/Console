@@ -41,7 +41,11 @@ class Request {
 	 **/
 
 	public function getFunctionName() {
-		$functionName = 'index';
+		if (PHP_SAPI == 'cli') {
+			$functionName = 'help';
+		} else {
+			$functionName = 'index';
+		}
 		return $functionName;
 	}
 
