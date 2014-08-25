@@ -15,7 +15,7 @@
  * along with this program. If not, see <http://www.gnu.org/licenses/>.
  */
 
-namespace Nmon;
+namespace Console;
 
 class Application {
 
@@ -26,7 +26,7 @@ class Application {
 		$this->setAutoloader();
 
 		// request handler
-		$request = new \Nmon\Request;
+		$request = new \Console\Request;
 
 		$controllerName = $request->getControllerName();
 		$functionName = $request->getFunctionName();

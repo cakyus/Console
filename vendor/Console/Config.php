@@ -15,18 +15,11 @@
  * along with this program. If not, see <http://www.gnu.org/licenses/>.
  */
 
-define('APPLICATION_ROOT', __DIR__);
-define('APPLICATION_PATH', APPLICATION_ROOT.DIRECTORY_SEPARATOR.'app');
-define('APPLICATION_DATA', APPLICATION_ROOT.DIRECTORY_SEPARATOR.'data');
-define('APPLICATION_VENDOR', APPLICATION_ROOT.DIRECTORY_SEPARATOR.'vendor');
+namespace Console;
 
-include(__DIR__.DIRECTORY_SEPARATOR.'config.php');
+class Config {
 
-include(APPLICATION_VENDOR
-	.DIRECTORY_SEPARATOR.'Console'
-	.DIRECTORY_SEPARATOR.'Application.php'
-	);
-
-$app = new \Console\Application;
-$app->start();
-
+	public function __construct() {
+		// code...
+	}
+}
