@@ -17,7 +17,23 @@
 
 namespace Controller;
 
-class Index {
+class Index extends \Console\Controller {
+
+	/**
+	 * Be verbose
+	 **/
+
+	public $verbose;
+
+	public function __construct() {
+		parent::__construct();
+	}
+
+	/**
+	 * Print Hello World
+	 *
+	 * @return string
+	 **/
 
 	public function index() {
 		echo "Hello World\n";
